@@ -1,33 +1,25 @@
-import {arc} from 'd3';
+import { useState, useEffect } from 'react';
+import { csv } from 'd3';
 
 
 const App = () => {
-  const width = 960;
-  const height = 500;
-  const strokeW = 10;
-  const centerX = width/2;
-  const centerY = (height-strokeW)/2;
-  const offsetX = 85;
-  const offsetY = 55;
-  const mouthArc = arc()
-    .innerRadius(140)
-    .outerRadius(150)
-    .startAngle(Math.PI/2 + Math.PI/6)
-    .endAngle(Math.PI + Math.PI/2 - Math.PI/6);
+  const [data, setData] = useState(null);
+  const csv_url = "https://gist.githubusercontent.com/whoinlee/3000d2a926de7fb1697ba1fd5500af8e/raw/2a4025eaa8cbb51fe801cf290609d77151509347/cssNamedColors.csv";
+
+  useEffect(() => {
+    const getData = async () => {
+      const result = await(csv(csv_url));
+      // console.log("data:\n", result);
+      setData(result);
+    }
+    getData();
+  }, []);
+
 
   return (
-        <svg width={width} height={height}>
-          <g transform={`translate(${centerX}, ${centerY})`}>
-            <circle r="200" fill="yellow" stroke="black" strokeWidth={strokeW} />
-            <circle r="40" fill="black"
-                    cx={-offsetX}
-                    cy={-offsetY} />
-            <circle r="40" fill="black"
-                    cx={offsetX}
-                    cy={-offsetY} />
-            <path d={mouthArc()} />
-          </g>
-        </svg>
+    <>
+      <div>Data is {data? "loaded" : 'loading data...'}</div>
+    </>
   );
 };
 
