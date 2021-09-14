@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden; /* no scroll bar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  /* background-color: rgb(0, 0, 0, 0.05); */
+  height: 650px;
+  width: 650px;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  border: 1px solid black;
+}
+
+/* #vg-tooltip-element {
+  font-size: 20px;
+  color: #3e3c38;
+} */

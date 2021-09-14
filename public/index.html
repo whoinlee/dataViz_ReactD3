@@ -2,49 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <script src="https://unpkg.com/d3@7.0.1/dist/d3.min.js"></script>
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script>
-      /**/
-      const csv_url = "https://gist.githubusercontent.com/whoinlee/3000d2a926de7fb1697ba1fd5500af8e/raw/2a4025eaa8cbb51fe801cf290609d77151509347/cssNamedColors.csv";
-      const fetchText = async(url) => {
-        const text = await(await fetch(url)).text();
-        // console.log(text);
-        return text;
-      };
-      //-- updated using d3.csvParse()
-      //-- returns an array of objects
-      //-- [0: {Specification: "CSS Level 1", Keyword: "black", RGB hex value: "#000000"} ...]
-      /* Option1
-      fetchText(csv_url).then( text => {
-        const data = d3.csvParse(text);
-        console.log("csv data: \n", data) 
-        // console.log("rows: ", data.length)
-        // console.log("columns: ", data.columns.length)
-      }); */
-
-      /* Option2
-      d3.csv(csv_url).then( data => {
-        console.log("csv data: \n", data)
-      }); */
-      
-      // fetch(csv_url)
-      // .then(res => {
-      //   res.text().then(text => { console.log(text); } );
-      // });
-
-      
-    </script>
     <div id="root"></div>
+
   </body>
 </html>
