@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { csv, arc } from 'd3';
+import { csv, arc, pie } from 'd3';
 //-- Styles
 import "./App.css";
 
@@ -17,6 +17,7 @@ const App = () => {
   const pieArc = arc()
     .innerRadius(width/2 - 80)
     .outerRadius(width/2);
+  const colorPie = pie().value(1);
 
   useEffect(() => {
     const getData = async() => {
@@ -35,14 +36,16 @@ const App = () => {
   return ( 
   <div className="container">
     <svg width={width} height={height}>
-      <g transform={`translate(${centerX}, ${centerY})`}
-        textAnchor='middle'>
-        {data.map((d, i) => <path key={i} 
-                                  fill={d['RGB hex value']}
-                                  d={pieArc({
+      <g transform={`translate(${centerX}, ${centerY})`}>
+        {colorPie(data).map((d, i) => <path 
+                                  key={`${i} + ${d.data['Keyword']}`}
+                                  fill={d.data['RGB hex value']}
+                                  d={pieArc(d)} /> 
+        /*d={pieArc({
                                     startAngle: (i/data.length)*2*Math.PI,
                                     endAngle: ((i+1)/data.length)*2*Math.PI
-                                  })} /> 
+                                  })} 
+        */
         )}
       </g>
     </svg>
