@@ -11,7 +11,7 @@ const margin = {
   top:20,
   right:20,
   bottom:20,
-  left:20
+  left:200
 }
 
 const BarChart = () => {
@@ -44,11 +44,28 @@ const BarChart = () => {
     .domain([0, max(data, d => d.Population)])
     .range([0, innerWidth]);
 
+  console.log("xScale.ticks()??\n", xScale.ticks())
+
   return ( 
   <div className="container">
     <svg width={width} height={height}>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
-        {data.map(d=> <rect 
+        {xScale.ticks().map(tickValue => 
+          (<g key={tickValue} transform={`translate(${xScale(tickValue)}, 0)`}>
+            <line 
+              x1={0} y1={0}
+              x2={0} y2={innerHeight} 
+              stroke="black"
+            />
+            <text dy=".71em" y={innerHeight+3} style={{textAnchor:'middle'}}>{tickValue}</text>
+          </g>))}
+          {yScale.domain().map(tickValue => 
+            <text key={tickValue} dy=".32em" 
+            x={-4} 
+            y={yScale(tickValue) + yScale.bandwidth()/2}
+            style={{textAnchor:'end'}}>{tickValue}</text>
+          )}
+        {data.map(d=> <rect key={d.Country}
         x={0}
         y={yScale(d.Country)}
         width={xScale(d.Population)}
