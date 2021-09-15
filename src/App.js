@@ -1,8 +1,8 @@
 import React from 'react';
-import BarChart from './components/BarChart';
+import ScatterPlot from './components/ScatterPlot';
 
 const App = () => {
-    return <BarChart />
+    return <ScatterPlot />
 }
 
 export default App
