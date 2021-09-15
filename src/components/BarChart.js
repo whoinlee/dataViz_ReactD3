@@ -1,4 +1,4 @@
-import { scaleBand, scaleLinear, max } from 'd3';
+import { scaleBand, scaleLinear, max, format } from 'd3';
 import { useData } from '../utils/useData';
 //-- Components
 import AxisBottom from './AxisBottom';
@@ -7,12 +7,13 @@ import Marks from './Marks';
 //-- Styles
 import "../styles/BarChart.css";
 
+
 const width=960;
-const height=500;
+const height=560;
 const margin = {
   top:20,
   right:20,
-  bottom:20,
+  bottom:60,
   left:200
 }
 
@@ -31,21 +32,29 @@ const BarChart = () => {
   //
   const yScale = scaleBand()
     .domain(data.map(yValue))
-    .range([0, innerHeight]);
+    .range([0, innerHeight])
+    .paddingInner(0.15)
+    .paddingOuter(0);
   const xScale = scaleLinear()
     .domain([0, max(data, xValue)])
     .range([0, innerWidth]);
 
-  console.log("xScale.ticks()??\n", xScale.ticks())
+  const xAxisTickFormat = tickValue => format(".2s")(tickValue).replace("G", "B");
+
+  // console.log("xScale.ticks()??\n", xScale.ticks())
 
   return ( 
   <div className="container">
     <svg width={width} height={height}>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
-          <AxisBottom xScale={xScale} innerHeight={innerHeight} />
+          <AxisBottom xScale={xScale} innerHeight={innerHeight} 
+                      tickFormat={xAxisTickFormat} />
           <AxisLeft yScale={yScale} />
+          <text x={innerWidth/2} y={innerHeight+45} textAnchor="middle"
+          >Population&nbsp;&nbsp;&nbsp;&nbsp;</text>
           <Marks data={data}  xScale={xScale} yScale={yScale} 
-                              xValue={xValue} yValue={yValue}/>
+                              xValue={xValue} yValue={yValue}
+                              tooltipFormat={xAxisTickFormat} />
       </g>
     </svg>
   </div>)

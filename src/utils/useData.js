@@ -12,11 +12,11 @@ export const useData = () => {
         const getData = async() => {
             const col = d => {
                 // d.Population = parseFloat(d['2020']);  //string to number
-                d.Population = +d['2020'];                //string to number
+                d.Population = +d['2020']*1000;           //string to number
                 return d;
             }
             const data = await csv(csv_url, col);
-            setData(data.slice(0,10));
+            setData(data.slice(0,15));
             console.log('getData :: data[0],\n', data[0]);
             // console.log("response:\n", data);
         }
