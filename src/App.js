@@ -1,8 +1,8 @@
 import React from 'react';
-import LineChart from './components/LineChart';
+import WorldMap from './components/WorldMap';
 
 const App = () => {
-    return <LineChart />
+    return <WorldMap />
 }
 
 export default App
