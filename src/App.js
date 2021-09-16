@@ -1,8 +1,8 @@
 import React from 'react';
-import ScatterPlot from './components/ScatterPlot';
+import LineChart from './components/LineChart';
 
 const App = () => {
-    return <ScatterPlot />
+    return <LineChart />
 }
 
 export default App
