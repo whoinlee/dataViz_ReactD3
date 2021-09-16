@@ -1,0 +1,37 @@
+.container {
+  height: 560px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  border: 1px solid black;
+}
+
+label,
+select {
+  font-size: 1em;
+}
+
+select options {
+  font-size: 1rem;
+}
+
+.tick line {
+  stroke: #c0c0bb;
+}
+
+.tick text {
+  font-size: 14px;
+}
+
+.tick.bottom text {
+  fill: #635f5d;
+}
+
+.tick.left text {
+  fill: #111;
+}
+
+.mark {
+  fill: #9427be;
+  opacity: 0.75;
+}

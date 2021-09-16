@@ -1,8 +1,8 @@
 import React from 'react';
-import WorldMap from './components/WorldMap';
+import ScatterPlotWithMenu from './components/ScatterPlotWithMenu';
 
 const App = () => {
-    return <WorldMap />
+    return <ScatterPlotWithMenu />
 }
 
 export default App
