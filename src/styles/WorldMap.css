@@ -3,21 +3,25 @@
   display: flex;
   justify-content: center; /* horizontal centering */
   align-items: center; /* vertical centering */
-  /* border: 1px solid black; */
+  border: 1px solid black;
+  padding-left: 20px;
+  /*  padding-top: 20px;
+  padding: auto; */
 }
 
-.tick line {
-  stroke: #c0c0bb;
+.marks {
+  cursor: pointer;
 }
 
-.tick text {
-  font-size: 14px;
+.marks .sphere {
+  fill: grey;
 }
 
-.tick.bottom text {
-  fill: #635f5d;
+.marks .graticule {
+  fill: none;
+  stroke: #dadada;
 }
 
-.tick.left text {
-  fill: #111;
-}
+/* .marks path {
+
+} */
