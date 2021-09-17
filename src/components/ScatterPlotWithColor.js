@@ -6,6 +6,7 @@ import ReactDropdown from 'react-dropdown';
 import AxisBottom from './AxisBottom';
 import AxisLeftScatter from './AxisLeftScatter';
 import ScatterMarks from './ScatterMarks';
+import ColorLegend from './ColorLegend';
 //-- Styles
 import "react-dropdown/style.css";
 import "../styles/ScatterPlotWithColor.css"; //-- custom style later
@@ -15,7 +16,7 @@ const width=980;
 const height=560;
 const margin = {
   top:20,
-  right:20,
+  right:200,
   bottom:60,
   left:75
 }
@@ -76,6 +77,7 @@ const ScatterPlotWithColor = () => {
 
   return (
   <div>
+    
     <div className="menus-container">
       <span className="dropdown-label">X</span>
       <ReactDropdown options={attributes}
@@ -96,12 +98,24 @@ const ScatterPlotWithColor = () => {
           <AxisLeftScatter yScale={yScale} innerWidth={innerWidth}/>
           <text x={innerWidth/2} y={innerHeight+45} 
                 textAnchor="middle">{xAxisLabel}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <g transform={`translate(${innerWidth + 60}, ${innerHeight - 100})`}>
+            <text
+              x={35}
+              y={-25}
+              className="axis-label"
+              textAnchor="middle"
+            >Species</text>
+            <ColorLegend colorScale={colorScale} 
+                         tickSpacing={20} 
+                         tickSize={7}
+                         tickTextOffset={20}/>
+          </g>
           <ScatterMarks data={data}  xScale={xScale} yScale={yScale} 
                               xValue={xValue} 
                               yValue={yValue}
                               colorScale={colorScale}
                               colorValue={colorValue}
-                              tooltipFormat={xAxisTickFormat} cRadius={8}/>
+                              tooltipFormat={xAxisTickFormat} cRadius={7}/>
       </g>
     </svg>
   </div>)
