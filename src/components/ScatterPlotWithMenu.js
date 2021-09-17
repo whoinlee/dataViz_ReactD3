@@ -1,13 +1,16 @@
+import React from 'react';
 import { useState } from 'react';
 import { scaleLinear, extent, format } from 'd3';
 import { useIrisData } from '../utils/useIrisData';
+import ReactDropdown from 'react-dropdown';
 //-- Components
 import AxisBottom from './AxisBottom';
 import AxisLeftScatter from './AxisLeftScatter';
 import ScatterMarks from './ScatterMarks';
-import Dropdown from './Dropdown';
+// import Dropdown from './Dropdown';
 //-- Styles
-import "../styles/ScatterPlotWithMenu.css";
+import "../styles/ScatterPlotWithMenu.css"; 
+import "react-dropdown/style.css";
 
 
 const width=980;
@@ -67,25 +70,22 @@ const ScatterPlot = () => {
   const yScale = scaleLinear()
     .domain(extent(data, yValue))
     .range([0, innerHeight])
+    .nice();
   
   const xAxisTickFormat = tickValue => format(".2s")(tickValue).replace("G", "B");
   const yAxisLabelOffset = 45;
 
-  return ( 
-  <>
-    <div class="dropdown" id="xDropdown">
-      <label for="x-select">X:</label>
-      <Dropdown options={attributes}
-                  id="x-select"
-                  selectedValue={xAttribute}
-                  onSelectedValueChange={setXAttribute} />
-    </div>
-    <div class="dropdown" id="yDropdown">
-      <label for="y-select">Y:</label>
-      <Dropdown options={attributes}
-                  id="y-select"
-                  selectedValue={yAttribute}
-                  onSelectedValueChange={setYAttribute} />
+  return (
+  <div>
+    <div className="menus-container">
+      <span className="dropdown-label">X</span>
+      <ReactDropdown options={attributes}
+                  value={xAttribute}
+                  onChange={({value}) => setXAttribute(value)} />
+      <span className="dropdown-label">Y</span>
+      <ReactDropdown options={attributes}
+                  value={yAttribute}
+                  onChange={({value}) => setYAttribute(value)} />
     </div>
     <svg width={width} height={height}>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
@@ -102,7 +102,7 @@ const ScatterPlot = () => {
                               tooltipFormat={xAxisTickFormat} cRadius={8}/>
       </g>
     </svg>
-  </>)
+  </div>)
 };
 
 export default ScatterPlot;
