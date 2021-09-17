@@ -1,16 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
-import { scaleLinear, extent, format } from 'd3';
+import React, { useState }  from 'react';
+import { scaleLinear, scaleOrdinal, extent, format } from 'd3';
 import { useIrisData } from '../utils/useIrisData';
 import ReactDropdown from 'react-dropdown';
 //-- Components
 import AxisBottom from './AxisBottom';
 import AxisLeftScatter from './AxisLeftScatter';
 import ScatterMarks from './ScatterMarks';
-// import Dropdown from './Dropdown';
 //-- Styles
-import "../styles/ScatterPlotWithMenu.css"; 
 import "react-dropdown/style.css";
+import "../styles/ScatterPlotWithColor.css"; //-- custom style later
 
 
 const width=980;
@@ -38,7 +36,7 @@ const getLabel = value => {
   }
 };
 
-const ScatterPlotWithMenu = () => {
+const ScatterPlotWithColor = () => {
   const initialXAttribute = 'petal_length';
   const [xAttribute, setXAttribute] = useState(initialXAttribute);
   const xValue = d => d[xAttribute];
@@ -48,30 +46,31 @@ const ScatterPlotWithMenu = () => {
   const [yAttribute, setYAttribute] = useState(initialYAttribute);
   const yValue = d => d[yAttribute];
   const yAxisLabel =  getLabel(yAttribute);
+  //
+  const colorValue = d => d.species;
 
   const data = useIrisData();
 
   if (!data) {
     return <pre>Loading ... </pre>
   } 
-
-  console.log("data\n", data);
-  console.log("data.columns\n", data.columns);
-
+  // console.log("data\n", data);
+  // console.log("data.columns\n", data.columns);
   const innerHeight = height - margin.bottom - margin.top;
   const innerWidth = width - margin.right - margin.left;
 
   const xScale = scaleLinear()
-    // .domain([min(data, xValue), max(data, xValue)])
     .domain(extent(data, xValue))
     .range([0, innerWidth])
     .nice();  //*****/
-
   const yScale = scaleLinear()
     .domain(extent(data, yValue))
     .range([0, innerHeight])
     .nice();
-  
+  const colorScale = scaleOrdinal()
+    .domain(data.map(colorValue))
+    .range(['#E6842A', '#137B80', '#8E6C8A']);
+
   const xAxisTickFormat = tickValue => format(".2s")(tickValue).replace("G", "B");
   const yAxisLabelOffset = 45;
 
@@ -98,11 +97,14 @@ const ScatterPlotWithMenu = () => {
           <text x={innerWidth/2} y={innerHeight+45} 
                 textAnchor="middle">{xAxisLabel}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
           <ScatterMarks data={data}  xScale={xScale} yScale={yScale} 
-                              xValue={xValue} yValue={yValue}
+                              xValue={xValue} 
+                              yValue={yValue}
+                              colorScale={colorScale}
+                              colorValue={colorValue}
                               tooltipFormat={xAxisTickFormat} cRadius={8}/>
       </g>
     </svg>
   </div>)
 };
 
-export default ScatterPlotWithMenu;
+export default ScatterPlotWithColor;

@@ -1,9 +1,10 @@
 import React from 'react';
-import ScatterPlotWithMenu from './components/ScatterPlotWithMenu';
+import ScatterPlotWithColor from './components/ScatterPlotWithColor';
+// import ScatterPlotWithMenu from './components/ScatterPlotWithMenu';
 // import WorldMap from './components/WorldMap';
 
 const App = () => {
-    return <ScatterPlotWithMenu />
+    return <ScatterPlotWithColor />
     // return <WorldMap />
 }
 
