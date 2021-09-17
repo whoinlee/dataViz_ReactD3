@@ -38,6 +38,8 @@ const getLabel = value => {
 };
 
 const ScatterPlotWithColor = () => {
+  const [hoveredValue, setHoveredValue] = useState(null);
+
   const initialXAttribute = 'petal_length';
   const [xAttribute, setXAttribute] = useState(initialXAttribute);
   const xValue = d => d[xAttribute];
@@ -57,8 +59,11 @@ const ScatterPlotWithColor = () => {
   } 
   // console.log("data\n", data);
   // console.log("data.columns\n", data.columns);
+
+  const filteredData = data.filter( d => (hoveredValue === colorValue(d)) );
   const innerHeight = height - margin.bottom - margin.top;
   const innerWidth = width - margin.right - margin.left;
+  const fadeOpacity = 0.2;
 
   const xScale = scaleLinear()
     .domain(extent(data, xValue))
@@ -74,6 +79,7 @@ const ScatterPlotWithColor = () => {
 
   const xAxisTickFormat = tickValue => format(".2s")(tickValue).replace("G", "B");
   const yAxisLabelOffset = 45;
+
 
   return (
   <div>
@@ -108,14 +114,25 @@ const ScatterPlotWithColor = () => {
             <ColorLegend colorScale={colorScale} 
                          tickSpacing={20} 
                          tickSize={7}
-                         tickTextOffset={20}/>
+                         tickTextOffset={20}
+                         onHover={setHoveredValue}
+                         hoveredValue={hoveredValue}
+                         fadeOpacity={fadeOpacity}/>
           </g>
-          <ScatterMarks data={data}  xScale={xScale} yScale={yScale} 
-                              xValue={xValue} 
-                              yValue={yValue}
-                              colorScale={colorScale}
-                              colorValue={colorValue}
-                              tooltipFormat={xAxisTickFormat} cRadius={7}/>
+          <g opacity={hoveredValue?.2:1}>
+            <ScatterMarks data={data}  xScale={xScale} yScale={yScale} 
+                          xValue={xValue} 
+                          yValue={yValue}
+                          colorScale={colorScale}
+                          colorValue={colorValue}
+                          tooltipFormat={xAxisTickFormat} cRadius={7}/>
+          </g>
+          <ScatterMarks data={filteredData}  xScale={xScale} yScale={yScale} 
+                        xValue={xValue} 
+                        yValue={yValue}
+                        colorScale={colorScale}
+                        colorValue={colorValue}
+                        tooltipFormat={xAxisTickFormat} cRadius={7}/>
       </g>
     </svg>
   </div>)

@@ -21,7 +21,7 @@ export const useIrisData = () => {
             }
             const data = await csv(csv_url, col);
             setData(data);
-            console.log('getData :: data[0],\n', data[0]);
+            // console.log('getData :: data[0],\n', data[0]);
         }
         getData();
     }, []);
