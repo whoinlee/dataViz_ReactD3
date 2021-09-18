@@ -3,7 +3,7 @@ import React from 'react';
 const ScatterMarks = ({ data, 
                         xScale, yScale, 
                         xValue, yValue, 
-                        colorScale, colorValue, 
+                        // colorScale, colorValue, 
                         tooltipFormat, cRadius}) => {
     return (
         data.map((d, i) => <circle className="mark"
@@ -11,7 +11,7 @@ const ScatterMarks = ({ data,
             key={i}
             cx={xScale(xValue(d))}
             cy={yScale(yValue(d))}
-            fill={colorScale(colorValue(d))}
+            // fill={colorScale(colorValue(d))}
             r={cRadius}>
                 <title>{tooltipFormat(xValue(d))}</title>
             </circle>
