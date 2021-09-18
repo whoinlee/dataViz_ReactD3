@@ -22,6 +22,10 @@
   stroke: #dadada;
 }
 
-/* .marks path {
-
-} */
+.city {
+  opacity: 0.25;
+  /* fill: black; */
+  /* fill: rgb(117, 42, 117); */
+  fill: rgb(182, 51, 182);
+  /* fill: #333; */
+}

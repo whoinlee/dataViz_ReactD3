@@ -1,11 +1,10 @@
 import React from 'react';
-import ScatterPlotWithColor from './components/ScatterPlotWithColor';
-// import ScatterPlotWithMenu from './components/ScatterPlotWithMenu';
-// import WorldMap from './components/WorldMap';
+// import ScatterPlotWithColor from './components/ScatterPlotWithColor';
+import WorldMap from './components/WorldMap';
 
 const App = () => {
-    return <ScatterPlotWithColor />
-    // return <WorldMap />
+    // return <ScatterPlotWithColor />
+    return <WorldMap />
 }
 
 export default App
