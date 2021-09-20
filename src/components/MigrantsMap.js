@@ -8,7 +8,7 @@ import MigrantsMapMarks from './MigrantsMapMarks';
 import "../styles/MigrantsMap.css";
 
 
-const width=960;
+const width=980;
 const height=500;
 
 const MigrantsMap = () => {
