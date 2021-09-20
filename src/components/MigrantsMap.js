@@ -24,7 +24,6 @@ const MigrantsMap = () => {
 
   const sizeValue = d => d['Total Dead and Missing'];
   const maxRadius = 15;
-
   const sizeScale = scaleSqrt()
     .domain([0, max(data, sizeValue)])
     .range([0, maxRadius]);

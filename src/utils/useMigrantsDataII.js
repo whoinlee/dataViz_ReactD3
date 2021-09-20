@@ -14,6 +14,7 @@ export const useMigrantsDataII = () => {
             const col = d => {
                 d["Total Dead and Missing"] = +d["Total Dead and Missing"];
                 d.coords = d['Location Coordinates'].split(',').map(d => +d).reverse();
+                // d['Reported Date'] = new Date(d['Reported Date']);
                 return d;
             }
             const data = await csv(csv_url, col);
