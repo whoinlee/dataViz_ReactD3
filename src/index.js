@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './styles/index.css';
+import DonutChart from './components/DonutChart';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DonutChart />
   </React.StrictMode>,
   document.getElementById('root')
 );
