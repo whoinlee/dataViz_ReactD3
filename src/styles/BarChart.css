@@ -1,0 +1,28 @@
+.container {
+  background-color: white;
+  height: 560px;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  border: 1px solid black;
+}
+
+.tick line {
+  stroke: #c0c0bb;
+}
+
+.tick text {
+  font-size: 14px;
+}
+
+.tick.bottom text {
+  fill: #635f5d;
+}
+
+.tick.left text {
+  fill: #111;
+}
+
+.mark {
+  fill: #176809;
+}
