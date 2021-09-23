@@ -8,8 +8,8 @@ import AxisBottom from './axis/AxisBottom';
 import AxisLeftS from './axis/AxisLeftS';
 import ScatterMarks from './marks/ScatterMarks';
 //-- Styles
-import "react-dropdown/style.css";
 import "../styles/ScatterPlotWithMenu.css"; 
+import "react-dropdown/style.css";
 
 
 const width=980;
@@ -53,8 +53,9 @@ const ScatterPlotWithMenu = () => {
   if (!data) {
     return <pre>Loading ... </pre>
   } 
+
   console.log("data\n", data);
-  // console.log("data.columns\n", data.columns);
+  console.log("data.columns\n", data.columns);
 
   const innerHeight = height - margin.bottom - margin.top;
   const innerWidth = width - margin.right - margin.left;
@@ -64,16 +65,17 @@ const ScatterPlotWithMenu = () => {
     .domain(extent(data, xValue))
     .range([0, innerWidth])
     .nice();  //*****/
+
   const yScale = scaleLinear()
     .domain(extent(data, yValue))
     .range([0, innerHeight])
     .nice();
-
+  
   const xAxisTickFormat = tickValue => format(".2s")(tickValue).replace("G", "B");
   const yAxisLabelOffset = 45;
 
   return (
-  <div>
+  <div className="container">
     <div className="menus-container">
       <span className="dropdown-label">X</span>
       <ReactDropdown  options={attributes}
