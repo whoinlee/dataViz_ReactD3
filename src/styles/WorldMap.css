@@ -1,0 +1,37 @@
+.container {
+  background-color: white;
+  height: 560px;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  border: 1px solid black;
+  padding-left: 20px;
+}
+
+.marks {
+  cursor: pointer;
+}
+
+.marks .sphere {
+  fill: #efefef;
+  opacity: 0.15;
+}
+
+/* .marks .land {
+  fill: #137b80;
+} */
+
+/* .marks .interiors {
+  fill: none;
+  stroke: #43a4a8;
+} */
+
+.marks .graticules {
+  fill: none;
+  stroke: #cacaca;
+}
+
+.city {
+  opacity: 0.25;
+  fill: rgb(182, 51, 182);
+}
