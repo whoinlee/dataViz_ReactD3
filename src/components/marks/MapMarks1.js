@@ -6,17 +6,19 @@ const projection = geoNaturalEarth1();
 const path = geoPath(projection);
 const graticule = geoGraticule();
 
-const MapMarks = ({data, colors, cities, sizeScale, sizeValue}) => {
-    const colorLength = colors.length;
+
+const MapMarks1 = ({data, colors, cities, sizeScale, sizeValue}) => {
+    const colorLength = (colors != null)? colors.length : 0;
     return (
         <g className="marks" >
             <path className="sphere" d={path({type: 'Sphere'})} />
             <path className="graticules" d={path(graticule())} />
-            {data.features.map((feature, i) => 
-                <path key={i} d={path(feature)} 
-                fill={(feature.properties.name==="Antarctica") ? "black" : colors[Math.floor(Math.random()*colorLength)]}>
+            {data.features.map((feature, i) => (
+                <path   key={i} d={path(feature)} 
+                        fill={(feature.properties.name==="Antarctica") ? "black" : colors[Math.floor(Math.random()*colorLength)]}>
                     <title key={feature.properties.name}>{feature.properties.name}</title>
                 </path>
+                )
             )}
             {(cities != null)? cities.map((city, i) => {
                 const [x, y] = projection([city.lng, city.lat]);
@@ -27,4 +29,4 @@ const MapMarks = ({data, colors, cities, sizeScale, sizeValue}) => {
 }
 
 /*fill={d.data['RGB hex value']}*/
-export default MapMarks;
+export default MapMarks1;

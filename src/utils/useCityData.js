@@ -18,7 +18,7 @@ export const useCityData = () => {
         const getData = async() => {
             const data = await csv(csv_url, row);
             // setData(data);
-            setData(data.slice(0,250));
+            setData(data.slice(0,500));
             // console.log('getData :: city data[0],\n', data[0]);
             // console.log("response:\n", data);
         }

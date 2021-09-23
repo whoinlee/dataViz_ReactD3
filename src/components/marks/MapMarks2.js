@@ -6,24 +6,30 @@ const projection = geoNaturalEarth1();
 const path = geoPath(projection);
 const graticule = geoGraticule();
 
-const MapMarks2 = ({data, colors, cities, sizeScale, sizeValue}) => {
-    const colorLength = colors.length;
+const MapMarks2 = ({data: {land, interiors}, cities, 
+                    sizeScale, sizeValue}) => {
+    console.log("cityData: ", cities)
     return (
         <g className="marks" >
             <path className="sphere" d={path({type: 'Shpere'})} />
             <path className="graticules" d={path(graticule())} />
-            {data.features.map((feature, i) => 
-                <path key={i} d={path(feature)} 
-                fill={(feature.properties.name==="Antarctica") ? "black" : colors[Math.floor(Math.random()*colorLength)]}>
-                    <title key={feature.properties.name}>{feature.properties.name}</title>
-                </path>
+            {land.features.map((feature, i) => 
+                <path className="land" key={i} d={path(feature)} />
             )}
-            {(cities != null)? cities.map((city, i) => {
-                const [x, y] = projection([city.lng, city.lat]);
-                return <circle key={i} className="city" cx={x} cy={y} r={sizeScale(sizeValue(city))} />
-            }) : null}
+            <path className="interiors" d={path(interiors)} />
+            {cities.map((data, i) => {
+                const [x, y] = projection([data.lng, data.lat]);
+                const {city, country, population} = data;
+                return (
+                <circle key={i} className="city" cx={x} cy={y} r={sizeScale(sizeValue(data))} >
+                    <title>{`${city}, ${country}\n${population}`}</title>
+                </circle>
+                )
+            })}
         </g>
     )
 }
 
+/*20: {city: 'Seoul', lat: 37.5663, lng: 126.9997, country: 'Korea, South', population: 9796000}
+*/
 export default MapMarks2;

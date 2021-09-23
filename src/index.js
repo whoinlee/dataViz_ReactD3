@@ -5,16 +5,17 @@ import ReactDOM from 'react-dom';
 // import BarChart from './components/BarChart';
 // import ScatterPlot from './components/ScatterPlot';
 // import ScatterPlotWithMenu from './components/ScatterPlotWithMenu';
-import ScatterPlotWithColor from './components/ScatterPlotWithColor';
+// import ScatterPlotWithColor from './components/ScatterPlotWithColor';
 // import LineChart from './components/LineChart';
 // import WorldMap from './components/WorldMap';
+import WorldMapWithCities from './components/WorldMapWithCities';
 //-- Styles
 import "./style.css";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ScatterPlotWithColor />
+    <WorldMapWithCities />
   </React.StrictMode>,
   document.getElementById('root')
 );
