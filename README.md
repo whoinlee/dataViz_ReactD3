@@ -18,3 +18,6 @@
 
 **5.** [World Map](https://github.com/whoinlee/dataViz_ReactD3/tree/worldmap) :: A world map that shows countries in random css colors. The data is from [World Atlas TopoJSON](https://github.com/topojson/world-atlas)
 ==> [**Live Demo**](https://hopeful-clarke-05c8c7.netlify.app/)
+
+**6.** [World Map with Cities](https://github.com/whoinlee/dataViz_ReactD3/tree/worldmap-with-cities) :: A world map that shows top 500 cities with population. The city data is from [Simplemaps: World Cities Database](https://gist.githubusercontent.com/whoinlee/b510612c3891dc50fca48abe7768d58c/raw/worldcities_clean.csv)
+==> [**Live Demo**](https://hopeful-curie-a04923.netlify.app/)
