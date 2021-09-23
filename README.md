@@ -18,5 +18,4 @@
 [**Live Demo v2**](https://fervent-chandrasekhar-695ff0.netlify.app/)
 
 **5.** [World Map](https://github.com/whoinlee/dataViz_ReactD3/tree/worldmap) :: A world map that shows countries in random css colors. The data is from [World Atlas TopoJSON](https://github.com/topojson/world-atlas)
-
 ==> [**Live Demo**](https://hopeful-clarke-05c8c7.netlify.app/)
