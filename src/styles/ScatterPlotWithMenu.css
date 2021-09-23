@@ -1,0 +1,50 @@
+/* .container {
+  height: 560px;
+  border: 1px solid black;
+} */
+
+/* dropdown menu */
+.menus-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.dropdown-label {
+  margin-left: 120px;
+  margin-right: 15px;
+  font-size: 1.5em;
+}
+
+/* ReactDropdown */
+.Dropdown-root {
+  width: 300px;
+  display: inline-block;
+}
+
+.Dropdown-menu {
+  max-height: 300px !important;
+}
+
+.tick line {
+  stroke: #c0c0bb;
+}
+
+.tick text {
+  font-size: 14px;
+}
+
+.tick.bottom text {
+  fill: #635f5d;
+}
+
+.tick.left text {
+  fill: #635f5d;
+}
+
+.mark {
+  fill: #9427be;
+  opacity: 0.75;
+}
