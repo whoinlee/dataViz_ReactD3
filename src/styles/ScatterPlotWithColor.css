@@ -7,12 +7,13 @@
 .menus-container {
   display: flex;
   align-items: center;
-  justify-content: flex-between;
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  /* border: 1px solid black; */
 }
 
 .dropdown-label {
-  /* margin-left: 20px; */
+  margin-left: 90px;
   margin-right: 10px;
   font-size: 1.5em;
 }

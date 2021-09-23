@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 // import DonutChart from './components/DonutChart';
 // import BarChart from './components/BarChart';
 // import ScatterPlot from './components/ScatterPlot';
-import ScatterPlotWithMenu from './components/ScatterPlotWithMenu';
+// import ScatterPlotWithMenu from './components/ScatterPlotWithMenu';
+import ScatterPlotWithColor from './components/ScatterPlotWithColor';
 // import LineChart from './components/LineChart';
 // import WorldMap from './components/WorldMap';
 //-- Styles
@@ -13,7 +14,7 @@ import "./style.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ScatterPlotWithMenu />
+    <ScatterPlotWithColor />
   </React.StrictMode>,
   document.getElementById('root')
 );
