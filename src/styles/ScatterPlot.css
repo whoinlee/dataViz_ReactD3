@@ -20,10 +20,10 @@
 }
 
 .tick.left text {
-  fill: #111;
+  fill: #635f5d;
 }
 
 .mark {
-  /* fill: #176809; */
-  fill: black;
+  fill: #9427be;
+  opacity: 0.75;
 }

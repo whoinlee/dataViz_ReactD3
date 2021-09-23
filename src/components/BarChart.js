@@ -3,7 +3,7 @@ import { usePopulationData } from '../utils/usePopulationData';
 //-- Components
 import AxisBottom from './axis/AxisBottom';
 import AxisLeft from './axis/AxisLeft';
-import Marks from './marks/Marks';
+import BarMarks from './marks/BarMarks';
 //-- Styles
 import "../styles/BarChart.css";
 
@@ -51,7 +51,7 @@ const BarChart = () => {
           <AxisLeft yScale={yScale} />
           <text x={innerWidth/2} y={innerHeight+45} textAnchor="middle"
           >Population&nbsp;&nbsp;&nbsp;&nbsp;</text>
-          <Marks data={data}  xScale={xScale} yScale={yScale} 
+          <BarMarks data={data}  xScale={xScale} yScale={yScale} 
                               xValue={xValue} yValue={yValue}
                               tooltipFormat={xAxisTickFormat} />
       </g>

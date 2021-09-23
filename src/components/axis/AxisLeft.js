@@ -5,9 +5,9 @@ const AxisLeft = ({yScale}) => {
       yScale.domain().map(tickValue => 
         <g className="tick left" key={tickValue} >
           <text key={tickValue} dy=".32em" 
-          x={-6} 
-          y={yScale(tickValue) + yScale.bandwidth()/2}
-          style={{textAnchor:'end'}}>{tickValue}</text>
+                x={-6} 
+                y={yScale(tickValue) + yScale.bandwidth()/2}
+                style={{textAnchor:'end'}}>{tickValue}</text>
         </g>
       )
     );
