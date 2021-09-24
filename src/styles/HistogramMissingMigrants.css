@@ -1,0 +1,21 @@
+/* .container {
+  height: 570px;
+  border: 1px solid black;
+} */
+
+.tick line {
+  stroke: #c0c0bb;
+}
+
+.tick text {
+  font-size: 14px;
+  fill: #635f5d;
+}
+
+.tick.bottom text {
+  font-size: 13px;
+}
+
+.mark {
+  opacity: 0.75;
+}
