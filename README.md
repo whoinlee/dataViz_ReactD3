@@ -28,5 +28,5 @@
 **8.** [Histogram of Missing Migrants](https://github.com/whoinlee/dataViz_ReactD3/tree/histogram) :: A date histogram of the [Missing Migrants Dataset](https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv)
 ==> [**Live Demo**](https://quirky-mcclintock-2e928b.netlify.app/)
 
-**9.** [Histogram and Worldmap of Missing Migrants](https://github.com/whoinlee/dataViz_ReactD3/tree/histo-worldmap) :: A mixed view of date histogram and world map of the [Missing Migrants Dataset](https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv)
+**9.** [Histogram and Worldmap of Missing Migrants](https://github.com/whoinlee/dataViz_ReactD3/tree/histo-worldmap) :: A mixed view, date histogram and world map, of the [Missing Migrants Dataset](https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv)
 ==> [**Live Demo**](https://eager-neumann-e80b70.netlify.app/)
