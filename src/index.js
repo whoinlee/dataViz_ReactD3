@@ -8,14 +8,15 @@ import ReactDOM from 'react-dom';
 // import ScatterPlotWithColor from './components/ScatterPlotWithColor';
 // import LineChart from './components/LineChart';
 // import WorldMap from './components/WorldMap';
-import WorldMapWithCities from './components/WorldMapWithCities';
+// import WorldMapWithCities from './components/WorldMapWithCities';
+import WorldMapMissingMigrants from './components/WorldMapMissingMigrants';
 //-- Styles
 import "./style.css";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <WorldMapWithCities />
+    <WorldMapMissingMigrants />
   </React.StrictMode>,
   document.getElementById('root')
 );

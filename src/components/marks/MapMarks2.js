@@ -29,7 +29,5 @@ const MapMarks2 = ({data: {land, interiors}, cities,
         </g>
     )
 }
-
-/*20: {city: 'Seoul', lat: 37.5663, lng: 126.9997, country: 'Korea, South', population: 9796000}
-*/
+/*{city: 'Seoul', lat: 37.5663, lng: 126.9997, country: 'Korea, South', population: 9796000*/
 export default MapMarks2;

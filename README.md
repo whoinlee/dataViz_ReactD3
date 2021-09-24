@@ -21,3 +21,6 @@
 
 **6.** [World Map with Cities](https://github.com/whoinlee/dataViz_ReactD3/tree/worldmap-with-cities) :: A world map that shows top 500 cities with population. The city data is from [Simplemaps: World Cities Database](https://gist.githubusercontent.com/whoinlee/b510612c3891dc50fca48abe7768d58c/raw/worldcities_clean.csv)
 ==> [**Live Demo**](https://hopeful-curie-a04923.netlify.app/)
+
+**7.** [World Map of Missing Migrants](https://github.com/whoinlee/dataViz_ReactD3/tree/worldmap-with-cities) :: A world map of the [Missing Migrants Dataset](https://gist.githubusercontent.com/whoinlee/9635d30312c4523fcbe1eab8bea69cb3/raw/MissingMigrants-Global-2019-10-08T09-47-14.csv)
+==> [**Live Demo**](https://hopeful-curie-a04923.netlify.app/)

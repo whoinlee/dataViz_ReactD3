@@ -20,7 +20,6 @@
 
 .marks .interiors {
   fill: none;
-  /* stroke: #43a4a8; */
   stroke: #cacaca;
 }
 
@@ -29,9 +28,8 @@
   stroke: #cacaca;
 }
 
-.city {
+circle {
   cursor: pointer;
+  fill: #137b80;
   opacity: 0.25;
-  fill: rgb(182, 51, 182);
-  /* fill: #43a4a8; */
 }
