@@ -10,14 +10,15 @@ import ReactDOM from 'react-dom';
 // import WorldMap from './components/WorldMap';
 // import WorldMapWithCities from './components/WorldMapWithCities';
 // import WorldMapMissingMigrants from './components/WorldMapMissingMigrants';
-import HistogramMissingMigrants from './components/HistogramMissingMigrants';
+// import HistogramMissingMigrants from './components/HistogramMissingMigrants';
+import HistoMapMissingMigrants from './components/HistoMapMissingMigrants';
 //-- Styles
 import "./style.css";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <HistogramMissingMigrants />
+    <HistoMapMissingMigrants />
   </React.StrictMode>,
   document.getElementById('root')
 );

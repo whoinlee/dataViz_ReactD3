@@ -3,7 +3,7 @@ import { bin, scaleLinear, scaleTime, extent, timeFormat, timeMonths, sum, max }
 //-- Components
 import BinnedMarks from './marks/BinnedMarks';
 import AxisBottom from './axis/AxisBottom';
-import AxisLeftScatter from './axis/AxisLeftScatter';
+import AxisLeftS from './axis/AxisLeftS';
 
 
 const width=980;
@@ -65,7 +65,7 @@ const DateHistogram = ({ data, height }) => {
         >
           {yAxisLabel}
         </text>
-        <AxisLeftScatter yScale={yScale} innerWidth={innerWidth} tickOffset={5} />
+        <AxisLeftS yScale={yScale} innerWidth={innerWidth} tickOffset={5} />
         <text
           className="axis-label"
           x={innerWidth / 2}

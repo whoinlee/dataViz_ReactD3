@@ -1,4 +1,5 @@
 .container {
+  background-color: white;
   height: 560px;
   display: flex;
   justify-content: center; /* horizontal centering */
@@ -9,13 +10,17 @@
 
 .marks .land {
   fill: #ececec;
+  opacity: 0.9;
 }
 .marks .sphere {
-  fill: #fbfbfb;
+  /* fill: #fbfbfb; */
+  fill: #efefef;
+  opacity: 0.25;
 }
 .marks .interiors {
   fill: none;
-  stroke: #d9dfe0;
+  /* stroke: #d9dfe0; */
+  stroke: #cacaca;
 }
 .marks .graticules {
   fill: none;
@@ -23,8 +28,8 @@
 }
 
 .tick line {
-  fill: none;
-  stroke: #999;
+  /* stroke: #999; */
+  stroke: #cacaca;
 }
 
 circle {
@@ -40,6 +45,7 @@ circle {
 .mark {
   fill: #137b80;
 }
+
 .axis-label {
   font-size: 0.5em;
   /* fill: #635f5d; */
