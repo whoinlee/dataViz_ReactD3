@@ -1,4 +1,3 @@
-// import React from 'react';
 import { useState, useEffect } from 'react';
 import { csv } from 'd3';
 
@@ -17,7 +16,7 @@ export const usePopulationData = () => {
             }
             const data = await csv(csv_url, col);
             setData(data.slice(0,15));
-            console.log('getData :: data[0],\n', data[0]);
+            // console.log('getData :: data[0],\n', data[0]);
             // console.log("response:\n", data);
         }
         getData();

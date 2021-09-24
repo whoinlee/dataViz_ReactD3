@@ -5,7 +5,7 @@ import { feature, mesh } from 'topojson-client';
 
 const data_url = "https://unpkg.com/world-atlas@2.0.2/countries-50m.json";
 
-export const useGeoDataII = () => {
+export const useGeoData2 = () => {
     const [data, setData] = useState(null);
 
     // console.log("data,\n", data);

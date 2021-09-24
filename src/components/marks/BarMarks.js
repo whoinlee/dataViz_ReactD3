@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Marks = ({data, xScale, yScale, xValue, yValue, tooltipFormat}) => {
+
+const BarMarks = ({data, xScale, yScale, xValue, yValue, tooltipFormat}) => {
     return (
         data.map(d=> <rect className="mark"
             // key={d.Country}
@@ -17,4 +18,4 @@ const Marks = ({data, xScale, yScale, xValue, yValue, tooltipFormat}) => {
     )
 }
 
-export default Marks;
+export default BarMarks;

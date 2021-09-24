@@ -1,19 +1,19 @@
 import React from 'react';
 import { bin, scaleLinear, extent, timeFormat, timeMonths, sum, max } from 'd3';
-import { useMigrantsData } from '../utils/useMigrantsData';
+import { useMigrantsData1 } from '../utils/useMigrantsData1';
 //-- Components
-import AxisBottom from './AxisBottom';
-import AxisLeftScatter from './AxisLeftScatter';
-import BinnedMarks from './BinnedMarks';
+import AxisBottom from './axis/AxisBottom';
+import AxisLeftS from './axis/AxisLeftS';
+import BinnedMarks from './marks/BinnedMarks';
 //-- Styles
-import "../styles/HistogramMigrants.css"; //-- custom style later
+import "../styles/HistogramMissingMigrants.css";
 
 
 const width=960;
 const height=500;
 const margin = {
   top:20,
-  right:30,
+  right:40,
   bottom:65,
   left:90
 };
@@ -21,9 +21,8 @@ const yAxisLabelOffset = 45;
 const innerHeight = height - margin.bottom - margin.top;
 const innerWidth = width - margin.right - margin.left;
 
-
-const HistogramMigrants = () => {
-  const data = useMigrantsData();
+const HistogramMissingMigrants = () => {
+  const data = useMigrantsData1();
 
   if (!data) {
     return <pre>Loading ... </pre>
@@ -62,16 +61,15 @@ const HistogramMigrants = () => {
   return (
     <svg width={width} height={height}>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
-          
           <AxisBottom xScale={xScale} 
                       innerHeight={innerHeight} 
                       tickFormat={xAxisTickFormat} 
                       tickOffset={7}/>
-          <text transform={`translate(${-yAxisLabelOffset}, ${innerHeight/2}) rotate(-90)`}
-                textAnchor="middle">{yAxisLabel}</text>
-          <AxisLeftScatter yScale={yScale} innerWidth={innerWidth}/>
           <text x={innerWidth/2} y={innerHeight+45} 
                 textAnchor="middle">{xAxisLabel}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <AxisLeftS yScale={yScale} innerWidth={innerWidth}/>
+          <text transform={`translate(${-yAxisLabelOffset}, ${innerHeight/2}) rotate(-90)`}
+                textAnchor="middle">{yAxisLabel}</text>
           <g >
             <BinnedMarks  data={binnedData}  
                           xScale={xScale} yScale={yScale} 
@@ -82,4 +80,4 @@ const HistogramMigrants = () => {
     </svg> )
 };
 
-export default HistogramMigrants;
+export default HistogramMissingMigrants;

@@ -1,29 +1,37 @@
 .container {
+  background-color: white;
   height: 560px;
   display: flex;
   justify-content: center; /* horizontal centering */
   align-items: center; /* vertical centering */
   border: 1px solid black;
   padding-left: 20px;
-  /*  padding-top: 20px;
-  padding: auto; */
+}
+
+.marks .sphere {
+  fill: #efefef;
+  opacity: 0.25;
 }
 
 .marks .land {
   fill: #ececec;
+  opacity: 0.9;
 }
-.marks .sphere {
-  fill: #fbfbfb;
-}
+
 .marks .interiors {
   fill: none;
-  stroke: #d9dfe0;
+  /* stroke: #43a4a8; */
+  stroke: #cacaca;
 }
+
 .marks .graticules {
   fill: none;
-  stroke: #ececec;
+  stroke: #cacaca;
 }
-circle {
-  fill: #137b80;
-  opacity: 0.3;
+
+.city {
+  cursor: pointer;
+  opacity: 0.25;
+  fill: rgb(182, 51, 182);
+  /* fill: #43a4a8; */
 }

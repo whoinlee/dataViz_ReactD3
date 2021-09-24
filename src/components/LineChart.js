@@ -1,9 +1,9 @@
 import { scaleLinear, scaleTime, extent, timeFormat } from 'd3';
-import { useTempData } from '../utils/useTempData';
+import { useTemperatureData } from '../utils/useTemperatureData';
 //-- Components
-import AxisBottom from './AxisBottom';
-import AxisLeftScatter from './AxisLeftScatter';
-import LineMarks from './LineMarks';
+import AxisBottom from './axis/AxisBottom';
+import AxisLeftS from './axis/AxisLeftS';
+import LineMarks from './marks/LineMarks';
 //-- Styles
 import "../styles/LineChart.css";
 
@@ -18,7 +18,7 @@ const margin = {
 }
 
 const LineChart = () => {
-  const data = useTempData();
+  const data = useTemperatureData();
   if (!data) {
     return <pre>Loading ... </pre>
   } 
@@ -33,7 +33,6 @@ const LineChart = () => {
   //-- labels
   const xAxisLabel = "Time";
   const yAxisLabel = "Temperature";
-
   const xAxisLabelOffset = 50;
   const yAxisLabelOffset = 45;
 
@@ -50,22 +49,21 @@ const LineChart = () => {
   //-- misc
   const xAxisTickFormat = timeFormat("%a");
 
-
   return ( 
   <div className="container">
     <svg width={width} height={height}>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
-          
           <AxisBottom xScale={xScale} innerHeight={innerHeight} 
                       tickFormat={xAxisTickFormat} tickOffset={8}/>
-          <text transform={`translate(${-yAxisLabelOffset}, ${innerHeight/2}) rotate(-90)`}
-                textAnchor="middle">{yAxisLabel}</text>
-          <AxisLeftScatter yScale={yScale} innerWidth={innerWidth}/>
           <text x={innerWidth/2} y={innerHeight+xAxisLabelOffset} 
                 textAnchor="middle">{xAxisLabel}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-          <LineMarks data={data}  xScale={xScale} yScale={yScale} 
-                              xValue={xValue} yValue={yValue}
-                              tooltipFormat={xAxisTickFormat} cRadius={4}/>
+          <AxisLeftS yScale={yScale} innerWidth={innerWidth}/>
+          <text transform={`translate(${-yAxisLabelOffset}, ${innerHeight/2}) rotate(-90)`}
+                textAnchor="middle">{yAxisLabel}</text>
+          <LineMarks  data={data}  
+                      xScale={xScale} yScale={yScale} 
+                      xValue={xValue} yValue={yValue}
+                      tooltipFormat={xAxisTickFormat} cRadius={null}/>
       </g>
     </svg>
   </div>)

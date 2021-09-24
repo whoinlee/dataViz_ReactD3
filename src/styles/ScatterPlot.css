@@ -1,4 +1,5 @@
 .container {
+  background-color: white;
   height: 560px;
   display: flex;
   justify-content: center; /* horizontal centering */
@@ -19,7 +20,7 @@
 }
 
 .tick.left text {
-  fill: #111;
+  fill: #635f5d;
 }
 
 .mark {

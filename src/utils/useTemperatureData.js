@@ -4,7 +4,7 @@ import { csv } from 'd3';
 
 const csv_url = "https://gist.githubusercontent.com/whoinlee/f8d0453cb140da2d1b1d474fe1fa3cd6/raw/week_temperature_sf.csv";
 
-export const useTempData = () => {
+export const useTemperatureData = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ export const useTempData = () => {
             }
             const data = await csv(csv_url, col);
             setData(data);
-            console.log('getData :: data[0],\n', data[0]);
+            // console.log('getData :: data[0],\n', data[0]);
         }
         getData();
     }, []);

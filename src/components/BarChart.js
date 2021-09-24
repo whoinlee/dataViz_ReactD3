@@ -1,9 +1,9 @@
 import { scaleBand, scaleLinear, max, format } from 'd3';
-import { useData } from '../utils/useData';
+import { usePopulationData } from '../utils/usePopulationData';
 //-- Components
-import AxisBottom from './AxisBottom';
-import AxisLeft from './AxisLeft';
-import Marks from './Marks';
+import AxisBottom from './axis/AxisBottom';
+import AxisLeft from './axis/AxisLeft';
+import BarMarks from './marks/BarMarks';
 //-- Styles
 import "../styles/BarChart.css";
 
@@ -18,7 +18,7 @@ const margin = {
 }
 
 const BarChart = () => {
-  const data = useData();
+  const data = usePopulationData();
   if (!data) {
     return <pre>Loading ... </pre>
   } 
@@ -40,7 +40,6 @@ const BarChart = () => {
     .range([0, innerWidth]);
 
   const xAxisTickFormat = tickValue => format(".2s")(tickValue).replace("G", "B");
-
   // console.log("xScale.ticks()??\n", xScale.ticks())
 
   return ( 
@@ -52,7 +51,7 @@ const BarChart = () => {
           <AxisLeft yScale={yScale} />
           <text x={innerWidth/2} y={innerHeight+45} textAnchor="middle"
           >Population&nbsp;&nbsp;&nbsp;&nbsp;</text>
-          <Marks data={data}  xScale={xScale} yScale={yScale} 
+          <BarMarks data={data}  xScale={xScale} yScale={yScale} 
                               xValue={xValue} yValue={yValue}
                               tooltipFormat={xAxisTickFormat} />
       </g>

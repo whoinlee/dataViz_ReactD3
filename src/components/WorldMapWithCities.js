@@ -1,24 +1,22 @@
 import React from 'react';
 import { max } from 'd3';
 import { scaleSqrt } from 'd3-scale';
-import { useGeoData1 } from '../utils/useGeoData1';
-import { useColorData } from '../utils/useColorData';
+import { useGeoData2 } from '../utils/useGeoData2';
 import { useCityData } from '../utils/useCityData';
 //-- Components
-import MapMarks1 from './marks/MapMarks1';
+import MapMarks2 from './marks/MapMarks2';
 //-- Styles
-import "../styles/WorldMap.css";
+import "../styles/WorldMapWithCities.css";
 
 
 const width=980;
 const height=560;
 
-const WorldMap = () => {
-  const data = useGeoData1();
-  const colorData = useColorData();
+const WorldMapWithCities = () => {
+  const data = useGeoData2();
   const cityData = useCityData();
 
-  if (!data || !colorData || !cityData) {
+  if (!data || !cityData) {
     return <pre>Loading ... </pre>
   } 
   // console.log("data\n", data);
@@ -31,10 +29,10 @@ const WorldMap = () => {
   return ( 
     <div className="container">
       <svg width={width} height={height}>   
-          <MapMarks1  data={data} colors={colorData} cities={null}
+          <MapMarks2  data={data} cities={cityData}
                       sizeScale={sizeScale} sizeValue={sizeValue}/>
       </svg>
     </div>)
 };
 
-export default WorldMap;
+export default WorldMapWithCities;

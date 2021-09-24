@@ -1,25 +1,24 @@
 import React from 'react';
-import { useGeoDataII } from '../utils/useGeoDataII';
-import { useMigrantsDataII } from '../utils/useMigrantsDataII';
 import { scaleSqrt, max } from 'd3';
+import { useGeoData2 } from '../utils/useGeoData2';
+import { useMigrantsData2 } from '../utils/useMigrantsData2';
 //-- Components
-import MigrantsMapMarks from './MigrantsMapMarks';
+import MigrantsMapMarks from './marks/MigrantsMapMarks';
 //-- Styles
-import "../styles/MigrantsMap.css";
+import "../styles/WorldMapMissingMigrants.css";
 
 
 const width=980;
 const height=500;
 
-const MigrantsMap = () => {
-  const data = useMigrantsDataII();
-  const geoData = useGeoDataII();
+const WorldMapMissingMigrants = () => {
+  const data = useMigrantsData2();
+  const geoData = useGeoData2();
   
   if (!data || !geoData) {
     return <pre>Loading ... </pre>
   } 
-
-  console.log("migrantsData\n", data);
+  // console.log("migrantsData\n", data);
   // console.log("geoData\n", geoData);
 
   const sizeValue = d => d['Total Dead and Missing'];
@@ -39,4 +38,4 @@ const MigrantsMap = () => {
     </div>)
 };
 
-export default MigrantsMap;
+export default WorldMapMissingMigrants;

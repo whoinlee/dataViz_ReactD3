@@ -1,8 +1,33 @@
 .container {
   height: 650px;
   width: 650px;
-  display: flex;
-  justify-content: center; /* horizontal centering */
-  align-items: center; /* vertical centering */
+  background-color: white;
   border: 1px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-pie {
+  cursor: pointer;
+}
+
+.color-pie:hover {
+  filter: brightness(1.2);
+}
+
+.container p {
+  position: absolute;
+}
+
+#color-name {
+  font-size: 14px;
+  font-weight: bold;
+  top: 49%;
+}
+
+#color-code {
+  font-size: 12px;
+  top: 52%;
 }

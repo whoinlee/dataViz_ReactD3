@@ -4,10 +4,9 @@ import { scaleLinear, extent, format } from 'd3';
 import { useIrisData } from '../utils/useIrisData';
 import ReactDropdown from 'react-dropdown';
 //-- Components
-import AxisBottom from './AxisBottom';
-import AxisLeftScatter from './AxisLeftScatter';
-import ScatterMarks from './ScatterMarks';
-// import Dropdown from './Dropdown';
+import AxisBottom from './axis/AxisBottom';
+import AxisLeftS from './axis/AxisLeftS';
+import ScatterMarks from './marks/ScatterMarks';
 //-- Styles
 import "../styles/ScatterPlotWithMenu.css"; 
 import "react-dropdown/style.css";
@@ -76,30 +75,30 @@ const ScatterPlotWithMenu = () => {
   const yAxisLabelOffset = 45;
 
   return (
-  <div>
+  <div className="container">
     <div className="menus-container">
       <span className="dropdown-label">X</span>
-      <ReactDropdown options={attributes}
-                  value={xAttribute}
-                  onChange={({value}) => setXAttribute(value)} />
+      <ReactDropdown  options={attributes}
+                      value={xAttribute}
+                      onChange={({value}) => setXAttribute(value)} />
       <span className="dropdown-label">Y</span>
-      <ReactDropdown options={attributes}
-                  value={yAttribute}
-                  onChange={({value}) => setYAttribute(value)} />
+      <ReactDropdown  options={attributes}
+                      value={yAttribute}
+                      onChange={({value}) => setYAttribute(value)} />
     </div>
     <svg width={width} height={height}>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
-          
           <AxisBottom xScale={xScale} innerHeight={innerHeight} 
-                      tickFormat={xAxisTickFormat} />
-          <text transform={`translate(${-yAxisLabelOffset}, ${innerHeight/2}) rotate(-90)`}
-                textAnchor="middle">{yAxisLabel}</text>
-          <AxisLeftScatter yScale={yScale} innerWidth={innerWidth}/>
+                      tickFormat={xAxisTickFormat} tickOffset={5}/>
           <text x={innerWidth/2} y={innerHeight+45} 
                 textAnchor="middle">{xAxisLabel}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-          <ScatterMarks data={data}  xScale={xScale} yScale={yScale} 
-                              xValue={xValue} yValue={yValue}
-                              tooltipFormat={xAxisTickFormat} cRadius={8}/>
+          <AxisLeftS yScale={yScale} innerWidth={innerWidth}/>
+          <text transform={`translate(${-yAxisLabelOffset}, ${innerHeight/2}) rotate(-90)`}
+                textAnchor="middle">{yAxisLabel}</text>
+          <ScatterMarks data={data}  
+                        xScale={xScale} yScale={yScale} 
+                        xValue={xValue} yValue={yValue}
+                        tooltipFormat={xAxisTickFormat} cRadius={8}/>
       </g>
     </svg>
   </div>)

@@ -1,4 +1,5 @@
 .container {
+  background-color: white;
   height: 560px;
   display: flex;
   justify-content: center; /* horizontal centering */
@@ -23,13 +24,14 @@
 }
 
 .marks circle {
-  fill: #f57526;
+  fill: red;
   /* opacity: 0.75; */
 }
 
 .marks path {
   stroke-width: 3;
-  stroke: #bd0606;
+  stroke: #fca818;
+  /* stroke: #333; */
   stroke-linejoin: round;
   stroke-linecap: round;
 }

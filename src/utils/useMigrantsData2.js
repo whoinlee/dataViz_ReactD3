@@ -5,8 +5,7 @@ import { csv } from 'd3';
 
 const csv_url = "https://gist.githubusercontent.com/whoinlee/9635d30312c4523fcbe1eab8bea69cb3/raw/MissingMigrants-Global-2019-10-08T09-47-14.csv";
 
-
-export const useMigrantsDataII = () => {
+export const useMigrantsData2= () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -18,6 +17,7 @@ export const useMigrantsDataII = () => {
                 return d;
             }
             const data = await csv(csv_url, col);
+            console.log("useMigrantsData :: migrants data\n", data);
             setData(data);
         }
         getData();

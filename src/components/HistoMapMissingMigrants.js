@@ -1,20 +1,20 @@
 import React from 'react';
-import { useGeoDataII } from '../utils/useGeoDataII';
+import { useGeoData2 } from '../utils/useGeoData2';
 import { useMigrantsData3 } from '../utils/useMigrantsData3';
 //-- Components
 import BubbleMap from './maps/BubbleMap';
 import DateHistogram from './DateHistogram';
 //-- Styles
-import "../styles/HistoMigrantsMap.css";
+import "../styles/HistoMapMissingMigrants.css";
 
 
 const width=980;
 const height=500;
 const dateHistogramSize=.2; //20%
 
-const HistoMigrantsMap = () => {
+const HistoMapMissingMigrants = () => {
   const data = useMigrantsData3();
-  const geoData = useGeoDataII();
+  const geoData = useGeoData2();
   
   if (!data || !geoData) {
     return <pre>Loading ... </pre>
@@ -33,4 +33,4 @@ const HistoMigrantsMap = () => {
     </div>)
 };
 
-export default HistoMigrantsMap;
+export default HistoMapMissingMigrants;

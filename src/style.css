@@ -2,7 +2,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  overflow: hidden; /* no scroll bar */
+  background-color: #efefef;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;

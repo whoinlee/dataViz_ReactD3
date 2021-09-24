@@ -9,13 +9,13 @@ const LineMarks = ({data, xScale, yScale, xValue, yValue, tooltipFormat, cRadius
                          .y(d => yScale(yValue(d)))
                          .curve(curveNatural)(data)} 
                 fill="none" stroke="black" />
-        {data.map(d=> 
+        {(cRadius != null)? data.map(d=> 
             <circle cx={xScale(xValue(d))}
                     cy={yScale(yValue(d))}
                     r={cRadius}>
                 <title>{tooltipFormat(xValue(d))}</title>
-            </circle>
-        )}
+            </circle> 
+        ) : null}
     </g>
 );
 

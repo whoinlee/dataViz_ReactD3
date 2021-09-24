@@ -3,11 +3,7 @@ import { useState, useEffect } from 'react';
 import { csv } from 'd3';
 
 
-// const csv_url = "https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv";
-
 const csv_url = 'https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/c22144062566de911ba32509613c84af2a99e8e2/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv';
-
-
 
 export const useMigrantsData3 = () => {
     const [data, setData] = useState(null);
