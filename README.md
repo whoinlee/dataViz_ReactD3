@@ -25,8 +25,8 @@
 **7.** [World Map of Missing Migrants](https://github.com/whoinlee/dataViz_ReactD3/tree/worldmap-missing-migrants) :: A world map of the [Missing Migrants Dataset](https://gist.githubusercontent.com/whoinlee/9635d30312c4523fcbe1eab8bea69cb3/raw/MissingMigrants-Global-2019-10-08T09-47-14.csv)
 ==> [**Live Demo**](https://quirky-noyce-710d2f.netlify.app/)
 
-**8.** [Histogram of Missing Migrants](https://github.com/whoinlee/dataViz_ReactD3/tree/histogram) :: A date histogram of the [Missing Migrants Dataset](https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv)
+**8.** [[Histogram of Missing Migrants]](https://github.com/whoinlee/dataViz_ReactD3/tree/histogram) :: A date histogram of the [Missing Migrants Dataset](https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv)
 ==> [**Live Demo**](https://quirky-mcclintock-2e928b.netlify.app/)
 
-**9.** [Histogram and Worldmap of Missing Migrants w. brushing](https://github.com/whoinlee/dataViz_ReactD3/tree/histo-worldmap-brushing) :: A mixed view, date histogram and world map, of the [Missing Migrants Dataset](https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv) with brushing.
+**9.** [[Histogram and Worldmap of Missing Migrants w. brushing]](https://github.com/whoinlee/dataViz_ReactD3/tree/histo-worldmap-brushing) :: A mixed view, date histogram and world map, of the [Missing Migrants Dataset](https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv) with brushing.
 ==> [**Live Demo**](https://dreamy-agnesi-b2acb6.netlify.app/)
