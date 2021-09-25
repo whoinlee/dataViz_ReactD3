@@ -9,6 +9,7 @@
 ==> [**Live Demo v1**](https://quizzical-payne-ff65d9.netlify.app/)
 
 [ [Scatter Plot II with dropdown menu]](https://github.com/whoinlee/dataViz_ReactD3/tree/scatterplot-with-menu) ==> [**Live Demo v2**](https://cranky-galileo-563f07.netlify.app/)
+
 [ [Scatter Plot III with color legend]](https://github.com/whoinlee/dataViz_ReactD3/tree/scatterplot-with-color) ==> [**Live Demo v3**](https://fervent-colden-b2f935.netlify.app/)
 
 **4.** [[Line Chart]](https://github.com/whoinlee/dataViz_ReactD3/tree/linechart) :: A line chart that shows temperature in celcius in San Francisco for a week. The data is from the [Data Canvas - Sense Your City API](http://grayarea.org/initiative/data-canvas-sense-your-city)
