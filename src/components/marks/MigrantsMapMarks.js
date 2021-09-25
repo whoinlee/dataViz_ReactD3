@@ -18,12 +18,12 @@ const MigrantsMapMarks = ({
                 <path key={i} className="land" d={path(feature)} />
             ))}
             <path className="interiors" d={path(interiors)} />
-            {data.map((d) => {
+            {data.map((d, i) => {
                 const [x, y] = projection(d.coords);
                 // console.log("d:", d);
                 return (
                     (x && y) ?
-                    <circle key={d['Web ID']} cx={x} cy={y} r={sizeScale(sizeValue(d))}>
+                    <circle key={i} cx={x} cy={y} r={sizeScale(sizeValue(d))}>
                         <title>{d["Total Dead and Missing"]}</title>
                     </circle> : null);
             })}
