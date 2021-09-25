@@ -19,18 +19,19 @@ const HistoMapWithBrushing = () => {
   const [brushExtent, setBrushExtent] = useState();
   
   if (!data || !geoData) return <pre>Loading ... </pre>
-  // console.log("migrantsData\n", data);
-  // console.log("geoData\n", geoData);
+  // console.log("migrantsData::\n", data);
+  // console.log("geoData::\n", geoData);
 
-  const filteredData = brushExtent? data.filter( d => {
-    const date = xValue(d);
-    return date > brushExtent[0] && date < brushExtent[1]
-  }) : data;
+  const filteredData = brushExtent ? 
+    data.filter( d => {
+      const date = xValue(d);
+      return date > brushExtent[0] && date < brushExtent[1]
+    }) : data;
 
   return ( 
     <div className="container">
       <svg width={width} height={height}>   
-          <BubbleMap data={filteredData} worldAtlas={geoData}/>
+          <BubbleMap data={data} filteredData={filteredData} worldAtlas={geoData}/>
           <g transform={`translate(0, ${height - dateHistogramSize*height})`}>
             <DateHistogramWithBrushing 
               data={data} 

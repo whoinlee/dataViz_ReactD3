@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import { geoNaturalEarth1, geoPath, geoGraticule } from 'd3';
 
 
@@ -12,12 +12,15 @@ const MigrantsMapMarks = ({
     sizeScale,
     sizeValue}) => (
         <g className="marks">
+        { useMemo(() => 
+        <>
             <path className="sphere" d={path({ type: 'Sphere' })} />
             <path className="graticules" d={path(graticule())} />
             {land.features.map((feature, i) => (
                 <path key={i} className="land" d={path(feature)} />
             ))}
             <path className="interiors" d={path(interiors)} />
+        </>, [land, interiors])}
             {data.map((d, i) => {
                 const [x, y] = projection(d.coords);
                 // console.log("d:", d);

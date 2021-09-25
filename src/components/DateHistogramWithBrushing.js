@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import {
   bin, extent, 
   scaleLinear, scaleTime, 
   timeFormat, timeMonths,
   sum, max,
   brushX, select,
-  // event
 } from 'd3';
 //-- Components
 import AxisBottom from './axis/AxisBottom';
@@ -13,46 +12,50 @@ import AxisLeftS from './axis/AxisLeftS';
 import BinnedMarks from './marks/BinnedMarks';
 
 
-// const width=980;
 const margin = {
   top:0,
   right:30,
   bottom:20,
   left:50
 };
-
 const xAxisLabelOffset = 54;
 const yAxisLabelOffset = 35;
+const yValue = d => d["Total Dead and Missing"];
+const xAxisLabel = 'Time';
+const yAxisLabel = 'Total Dead and Missing';
 
 const DateHistogramWithBrushing = ({ data, width, height, setBrushExtent, xValue }) => {
   const innerHeight = height - margin.bottom - margin.top;
   const innerWidth = width - margin.right - margin.left;
 
-  // const xValue = d => d["Reported Date"]; //==> moved to the parent
-  const yValue = d => d["Total Dead and Missing"];
-  const xAxisLabel = 'Time';
-  const yAxisLabel = 'Total Dead and Missing';
-
-  const xScale = scaleTime()
+  //*****/
+  const xScale = useMemo(() => scaleTime()
     .domain(extent(data, xValue))
     .range([0, innerWidth])
-    .nice();  //*****/
-  const [start, stop] = xScale.domain();
-  const binnedData = bin()
-    .value(xValue)
-    .domain(xScale.domain())
-    .thresholds(timeMonths(start, stop))(data)
-    .map(array => ({
-      y: sum(array, yValue),
-      x0: array.x0,
-      x1: array.x1
-    }));
+    .nice(), [data, xValue, innerWidth]);  
+  
+  //*****/
+  const binnedData = useMemo(() => {
+    const [start, stop] = xScale.domain();
+    return bin()
+      .value(xValue)
+      .domain(xScale.domain())
+      .thresholds(timeMonths(start, stop))(data)
+      .map(array => ({
+        y: sum(array, yValue),
+        x0: array.x0,
+        x1: array.x1
+      }))
+    }, [xValue, xScale, data]);
   // console.log("binnedData, \n", binnedData)
 
-  const yScale = scaleLinear()
-    .domain([0, max(binnedData, d=>d.y)])
-    .range([innerHeight, 0])
-    .nice();
+  //*****/
+  const yScale = useMemo(() => 
+    scaleLinear()
+      .domain([0, max(binnedData, d=>d.y)])
+      .range([innerHeight, 0])
+      .nice()
+  , [binnedData, innerHeight]);
   const xAxisTickFormat = timeFormat('%m/%d/%Y');
 
   const brushRef = useRef();
