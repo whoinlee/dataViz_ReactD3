@@ -31,3 +31,6 @@
 
 **9.** [[Histogram and World Map of missing migrants w. brushing]](https://github.com/whoinlee/dataViz_ReactD3/tree/histo-worldmap-brushing) :: A mixed view, date histogram and world map, of the [Missing Migrants Dataset](https://gist.githubusercontent.com/curran/a9656d711a8ad31d812b8f9963ac441c/raw/MissingMigrants-Global-2019-10-08T09-47-14-subset.csv) with brushing.
 ==> [**Live Demo**](https://dreamy-agnesi-b2acb6.netlify.app/)
+
+**10.** [[Choropleth Map]](https://github.com/whoinlee/HIV_dataVizReactD3) of the [IHME HIV / AIDS Dataset](https://gist.githubusercontent.com/whoinlee/1bfd682d588b2f40aa5f7d6f9a0721a8/raw/share-of-population-infected-with-hiv-ihme.csv). The data set is from [Our World in Data: HIV / AIDS by Max Roser and Hannah Ritchie](https://ourworldindata.org/hiv-aids) and originally sourced from [IHME: Global Burden of Disease Study 2017](http://ghdx.healthdata.org/gbd-results-tool)
+==> [**Live Demo**](https://distracted-meninsky-ce7470.netlify.app/)
