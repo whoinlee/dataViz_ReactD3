@@ -59,8 +59,8 @@ const DateHistogramWithBrushing = ({ data, width, height, setBrushExtent, xValue
   useEffect(() => {
     const brush = brushX().extent([[0, 0], [innerWidth, innerHeight]]);
     brush(select(brushRef.current));
-    brush.on('brush', ({selection}) => { 
-      setBrushExtent(selection.map(xScale.invert));
+    brush.on('brush end', ({selection}) => { 
+      setBrushExtent(selection && selection.map(xScale.invert));
       //console.log("selection:", selection); //-- == event.selection (brush selection's x,y coordinates)
     })
   }, [innerWidth, innerHeight, xScale, setBrushExtent]);
