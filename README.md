@@ -34,3 +34,11 @@
 
 **10.** [[Choropleth Map]](https://github.com/whoinlee/HIV_dataVizReactD3) of the [IHME HIV / AIDS Dataset](https://gist.githubusercontent.com/whoinlee/1bfd682d588b2f40aa5f7d6f9a0721a8/raw/share-of-population-infected-with-hiv-ihme.csv). The data set is from [Our World in Data: HIV / AIDS by Max Roser and Hannah Ritchie](https://ourworldindata.org/hiv-aids) and originally sourced from [IHME: Global Burden of Disease Study 2017](http://ghdx.healthdata.org/gbd-results-tool)
 ==> [**Live Demo**](https://distracted-meninsky-ce7470.netlify.app/)
+
+**11.** [[Weather Data Viz]](https://github.com/whoinlee/weather_dataVizReactD3) of NYC weather dataset.
+
+**12.** [[Donors Choose Data Viz]](https://github.com/whoinlee/donorsChoose_dataVizMERN) of [Donors Choose dataset](https://www.donorschoose.org/), built with **D3**, **dc**, **MongoDB**, **React**, and **Node** & **Express** (MERN).
+
+**13.** [[Nike Running Data Viz]](https://github.com/whoinlee/nikeRunning_dataVizReactRedux) with Nike+ API data, built with **Leaflet**, **Flot**, **React**, and **Redux**.
+
+**14.** [[Nasdaq 100 Index Data Viz]](https://github.com/whoinlee/nasdaq100_dataVizReactD3), built with **D3**, **dc**, and **React**.
