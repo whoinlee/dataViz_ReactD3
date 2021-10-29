@@ -9,16 +9,16 @@
   align-items: center;
 }
 
+.container p {
+  position: absolute;
+}
+
 .color-pie {
   cursor: pointer;
 }
 
 .color-pie:hover {
   filter: brightness(1.2);
-}
-
-.container p {
-  position: absolute;
 }
 
 #color-name {

@@ -7,6 +7,7 @@ import "../styles/DonutChart.css";
 
 const width=600;
 const height=600;
+const radius=width/2;
 const donutThickness = 85;
 const csvUrl = "https://gist.githubusercontent.com/whoinlee/3000d2a926de7fb1697ba1fd5500af8e/raw/cssNamedColors.csv";
 
@@ -22,12 +23,13 @@ const DonutChart = () => {
   if (!data) {
     return <pre>Loading ... </pre>
   } 
-
-
+  //-- "d3.arc"
   const pieArc = arc()
-              .innerRadius(width/2 - donutThickness)
-              .outerRadius(width/2);
-  const colorPie = pie().value(1);
+              .innerRadius(radius - donutThickness)
+              .outerRadius(radius);
+  //-- "d3.pie"
+  //-- generate an array of objects w. startAngle, endAngle, padAngle, index, data, and value
+  const colorPie = pie().value(1);  
 
   // const elt = document.getElementById('color-code');
 
@@ -61,7 +63,9 @@ const DonutChart = () => {
                     colorcode={d.data['RGB hex value']}> 
                 <title >{`${d.data['Keyword']}\n${d.data['RGB hex value']}`}</title>
               </path>
-              {/* {(i === 0)? <text className="hex-label" dx="-28" dy="25" >{d.data['RGB hex value']}</text> : null } */}
+              {/* {(i === 1)? 
+              <text className="hex-label" dx="-28" dy="25" >{d.data['RGB hex value']}</text>
+               : null } */}
             </g>
             )
           )}

@@ -18,7 +18,7 @@ export const useData = () => {
             const data = await csv(csv_url, col);
             setData(data.slice(0,15));
             console.log('getData :: data[0],\n', data[0]);
-            // console.log("response:\n", data);
+            console.log("response:\n", data);
         }
         getData();
     }, []);

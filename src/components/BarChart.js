@@ -19,26 +19,26 @@ const margin = {
 
 const BarChart = () => {
   const data = usePopulationData();
+
   if (!data) {
     return <pre>Loading ... </pre>
   } 
 
   const innerHeight = height - margin.bottom - margin.top;
   const innerWidth = width - margin.right - margin.left;
-  //
   //-- accessors
-  const yValue = d => d.Country;
   const xValue = d => d.Population;
+  const yValue = d => d.Country;
   //
+  const xScale = scaleLinear()
+    .domain([0, max(data, xValue)])
+    .range([0, innerWidth]);
   const yScale = scaleBand()
     .domain(data.map(yValue))
     .range([0, innerHeight])
     .paddingInner(0.15)
     .paddingOuter(0);
-  const xScale = scaleLinear()
-    .domain([0, max(data, xValue)])
-    .range([0, innerWidth]);
-
+  //
   const xAxisTickFormat = tickValue => format(".2s")(tickValue).replace("G", "B");
   // console.log("xScale.ticks()??\n", xScale.ticks())
 
@@ -46,14 +46,18 @@ const BarChart = () => {
   <div className="container">
     <svg width={width} height={height}>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
-          <AxisBottom xScale={xScale} innerHeight={innerHeight} 
-                      tickFormat={xAxisTickFormat} />
+          <AxisBottom xScale={xScale} 
+                      innerHeight={innerHeight} 
+                      tickFormat={xAxisTickFormat} 
+                      tickOffset={5} />
+          <text x={innerWidth/2} y={innerHeight+45} 
+                textAnchor="middle">Population&nbsp;&nbsp;&nbsp;&nbsp;
+          </text>
           <AxisLeft yScale={yScale} />
-          <text x={innerWidth/2} y={innerHeight+45} textAnchor="middle"
-          >Population&nbsp;&nbsp;&nbsp;&nbsp;</text>
-          <BarMarks data={data}  xScale={xScale} yScale={yScale} 
-                              xValue={xValue} yValue={yValue}
-                              tooltipFormat={xAxisTickFormat} />
+          <BarMarks data={data}  
+                    xScale={xScale} yScale={yScale} 
+                    xValue={xValue} yValue={yValue}
+                    tooltipFormat={xAxisTickFormat} />
       </g>
     </svg>
   </div>)
