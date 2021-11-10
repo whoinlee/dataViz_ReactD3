@@ -34,9 +34,7 @@ A world map of the [Missing Migrants Dataset](https://gist.githubusercontent.com
 ==> [**Live Demo v1**](https://elegant-tereshkova-5816aa.netlify.app/), and
 [**Live Demo v2**](https://fervent-chandrasekhar-695ff0.netlify.app/)
 
-**3.**
-
-- [[Scatter Plot]](https://github.com/whoinlee/dataViz_ReactD3/tree/scatterplot-with-color) of [The Iris Dataset](https://gist.githubusercontent.com/whoinlee/90f6546b4b83d053c37d67aeaca66c78/raw/iris.csv).
+**3.** [[Scatter Plot]](https://github.com/whoinlee/dataViz_ReactD3/tree/scatterplot-with-color) of [The Iris Dataset](https://gist.githubusercontent.com/whoinlee/90f6546b4b83d053c37d67aeaca66c78/raw/iris.csv).
 
 - [[Scatter Plot I]](https://github.com/whoinlee/dataViz_ReactD3/tree/scatterplot) ==> [**Live Demo v1**](https://quizzical-payne-ff65d9.netlify.app/)
 
