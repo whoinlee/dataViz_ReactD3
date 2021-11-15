@@ -1,15 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 //-- Components
 // import HistoMapWithBrushing from './components/HistoMapWithBrushing';
-import ScatterPlotWithColor from './components/ScatterPlotWithColor';
+import DonutChart from "./components/DonutChart";
 //-- Styles
 import "./style.css";
 
-
 ReactDOM.render(
   <React.StrictMode>
-    <ScatterPlotWithColor />
+    <DonutChart />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
